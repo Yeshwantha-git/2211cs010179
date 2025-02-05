@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="a"></div>
+    <div id="b"></div>
+    <script type="text/babel">
+  const m =<h1>React is {m*2} times better than jsx</h1>
+  const r  = ReactDOM.createRoot(document.getElementById('app'))
+  r.render(m)
+
+  //using a function call:
+  //you can call the function call directly within the jsx expressions
+
+ function getGreeting(name){
+    return Hello, ${name}! Welcome to React
+ }
+
+ function Greeting(){
+    const name = 'JSx'
+    return <h1>{getGreeting(name)}</h1>
+ }
+ //create a root and render the Greeting component
+ const root =  ReactDOM.createRoot(document.getElementById('a'))
+ root.render(<Greeting/>)
+
+ const element = <h1 className="a">Hello, JSX!</h1>
+        const e = document.getElementById("b")
+        const root1 = ReactDom.createRoot(e)
+        root1.render(element)
+
+ 
+</script>
+</body>
+</html>
