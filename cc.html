@@ -1,0 +1,19 @@
+import React from "react";
+import './App.css';
+import Welcome from './weclome'
+const Welcome=()=><h1 className="message">Hello Yeshwanth</h1>
+function app() {
+  // return(
+  //   <div className="App">
+  //     <Welcome/>
+  //   </div>
+  // )
+
+  return(
+    <div style={{textAlign:'center' ,color:'red'}}>
+      <Welcome name="yeshwanth" greeting="Hello"/>
+      <Welcome name="Ram" greeting="hi"/>
+    </div>
+  )
+}
+export default app;
