@@ -1,31 +1,30 @@
+import React,{useReducer}from 'React'
+
+///reducer function
+function appleReducer(State=3,action){
+    switch(action,type){
+        case 'ADD_APPLE':
+            return state+1 ;
+        case 'EAT_APPLE':
+            return state-1;
+        default:
+            return state;
+    }
+}
+
+
 function App(){
-    const data="Hello! Iam Guna"
+    const[state,dispact]=useReducer(appleReducer ,3)
     return(
-      <div>
-        <User1 data={data}/> 
-      </div>
-    );
-  };
-  
-  //user 1 component
-  function User1({data}){
-    return<User2 data={data}/>
-  }
-  
-  //user 2 component
-  function User2({data}){
-    return<User3 data={data}/>
-  }
-  
-  //user 3 component
-  function User3({data}){
-    return<User4 data={data}/>
-  }
-  
-  //user 4 component
-  function User4({data}){
-    return<div>(data)</div>
-  
-  }
-  
-  export default App;
+        <div>
+            <h1>Apple Counter</h1>
+            <p>Number of apples:{state}</p>
+
+            <button onClick={()=>dispatch({type:'ADD_APPLE'})}>ADD_APPLE</button>
+            <button onClick={()=>dispatch({type:'EAT_APPLE'})}>EAT APPLE</button>
+            
+        
+        </div>
+    )
+}
+export default app; 
